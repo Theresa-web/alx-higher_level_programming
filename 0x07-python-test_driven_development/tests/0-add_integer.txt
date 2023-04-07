@@ -1,0 +1,110 @@
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+::
+
+    >>> add_integer(2, -3)
+    -1
+
+The function is designed to work with both integer and floating-point values.
+
+::
+
+    >>> add_integer(2.0, 3.0)
+    5
+
+The function performs addition after converting any floating-point values to integers.
+
+::
+
+    >>> add_integer(2.9, 0.2)
+    2
+
+::
+
+    >>> add_integer(-2.9, -0.2)
+    -2
+
+The function adds integers together and converts any floating-point inputs to integers before the addition.
+
+::
+
+    >>> add_integer(2.3, -3)
+    -1
+
+The second argument of the function is not required, but if it is not given, the function will use 98 as the default value.
+
+::
+
+    >>> add_integer(2)
+    100
+
+Non-Numbers
+===========
+
+``add_integer()`` The function only works with integer or floating-point inputs; if either argument is of another data type, a TypeError will be raised:
+
+::
+
+    >>> add_integer("hello", 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(2, "hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+::
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(2.3, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+If either argument is not an integer or float, the function will raise a TypeError because it is designed to work with only those data types
+
+::
+
+    >>> add_integer("hello", "there")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+In the case of infinity being passed as an argument, the function will not work and will return an error.
+
+::
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: The conversion of float infinity to an integer is not allowed in the function and will result in an error being raised.
+
+
+::
+
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: The conversion of float infinity to an integer is not allowed in the function and will result in an error being raised.
+
+And again with NaN numbers.
+
+::
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: The conversion of float infinity to an integer is not allowed in the function and will result in an error being raised.
+
+::
+
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+    ValueError: The conversion of float infinity to an integer is not allowed in the function and will result in an error being raised.
