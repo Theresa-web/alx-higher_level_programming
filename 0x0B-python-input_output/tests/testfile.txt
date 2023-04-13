@@ -1,0 +1,5 @@
+Identify the inputs and expected outputs: Before testing a program, you need to identify the inputs that the program should accept and the expected outputs it should produce. This can be done by examining the program's requirements, specifications, or user stories.
+
+Write test cases: Once you have identified the inputs and expected outputs, you can write test cases. A test case consists of a set of input values and the expected output for those values. You can write test cases manually or use a testing framework such as unittest or pytest to automate the process.
+
+Run the tests: After writing the test cases, you can run them to verify that the program produces the expected output for each input. If a test fails, you need to investigate the cause of the failure and modify the program or the test case as needed.
